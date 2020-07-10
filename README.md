@@ -65,8 +65,8 @@ else{
 }
 ```
 ## Wiki
-More detail can be saw in [wiki](./wiki):
-- [Install MyORM to your project](./Install)
-- [Define database and table with class](./Define)
-- [Execute table operation](./Operation)
-- [Write extend to make MyORM support more databases](./Extend)
+More detail can be saw in [wiki](../../wiki):
+- [Install MyORM to your project](../../Install)
+- [Define database and table with class](../../Define)
+- [Execute table operation](../../Operation)
+- [Write extend to make MyORM support more databases](../../Extend)
