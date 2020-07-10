@@ -7,9 +7,10 @@ Add this text to your `pom.xml`
 <dependency>
     <groupId>com.wangtingzheng</groupId>
     <artifactId>MyOrm</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
 </dependency>
 ```
+The latest version can be check [here](./packages)
 ### Define a table
 This code will create a table named `MyTable` which has two item: username and password. The username is a 100 length varchar and it is primary key, the password is same but it is not primary key.
 ```java
