@@ -6,7 +6,7 @@ Add this text to your `pom.xml`
 ```xml
 <dependency>
     <groupId>com.wangtingzheng</groupId>
-    <artifactId>MyOrm</artifactId>
+    <artifactId>myorm</artifactId>
     <version>1.0.6</version>
 </dependency>
 ```
