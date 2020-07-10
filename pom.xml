@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wangtingzheng</groupId>
-    <artifactId>MyOrm</artifactId>
-    <version>1.0.5</version>
+    <artifactId>myorm</artifactId>
+    <version>1.0.6</version>
 
     <distributionManagement>
         <repository>
