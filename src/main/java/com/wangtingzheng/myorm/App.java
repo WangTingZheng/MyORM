@@ -20,7 +20,6 @@ import java.util.Set;
  */
 public class App{
     public static void main(String[] args) throws Exception {
-
         DatabaseApt databaseApt = new DatabaseApt(MyDatabase.class);
         //databaseApt.create();
 

@@ -1,6 +1,7 @@
 package com.wangtingzheng.myorm.test;
 
 import com.wangtingzheng.myorm.annotation.OrmItem;
+import com.wangtingzheng.myorm.annotation.OrmTable;
 import com.wangtingzheng.myorm.enums.ItemTypeEnum;
 
 /**
@@ -8,7 +9,8 @@ import com.wangtingzheng.myorm.enums.ItemTypeEnum;
  * @date 2020/7/8 9:10
  * @features
  */
-public class MyTable {
+@OrmTable
+public class MyTable  {
     @OrmItem(type = ItemTypeEnum.VARCHAR, length = 100, isPrimaryKey = true)
     private String username;
 

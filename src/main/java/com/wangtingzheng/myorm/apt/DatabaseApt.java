@@ -111,6 +111,14 @@ public class DatabaseApt {
         throw new TableClassNotFoundException("Table class not found in database when get new TableApt", database);
     }
 
+    public TableApt newTableAptInstance() throws TableClassNotFoundException {
+        return newTableAptInstance();
+    }
+
+    public TableApt newTableAptInstance(Class tableClass) throws TableClassNotFoundException {
+       return newTableAptInstance(tableClass.getSimpleName());
+    }
+
     /**
      * 创建数据库，数据库名称就是数据库类的类名称
      * @return 成功为true，不成功为false
