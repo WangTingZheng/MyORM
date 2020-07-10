@@ -10,7 +10,7 @@ Add this text to your `pom.xml`
     <version>1.0.6</version>
 </dependency>
 ```
-The latest version can be check [here](./packages)
+The latest version can be check [here](https://github.com/WangTingZheng/MyORM/packages)
 ### Define a table
 This code will create a table named `MyTable` which has two item: username and password. The username is a 100 length varchar and it is primary key, the password is same but it is not primary key.
 ```java
@@ -65,8 +65,8 @@ else{
 }
 ```
 ## Wiki
-More detail can be saw in [wiki](../../wiki):
-- [Install MyORM to your project](../../Install)
-- [Define database and table with class](../../Define)
-- [Execute table operation](../../Operation)
-- [Write extend to make MyORM support more databases](../../Extend)
+More detail can be saw in [wiki](https://github.com/WangTingZheng/MyORM/wiki):
+- [Install MyORM to your project](https://github.com/WangTingZheng/MyORM/wikiInstall)
+- [Define database and table with class](https://github.com/WangTingZheng/MyORM/wikiDefine)
+- [Execute table operation](https://github.com/WangTingZheng/MyORM/wiki/Operation)
+- [Write extend to make MyORM support more databases](https://github.com/WangTingZheng/MyORM/wiki/Extend)
