@@ -66,7 +66,7 @@ else{
 ```
 ## Wiki
 More detail can be saw in [wiki](https://github.com/WangTingZheng/MyORM/wiki):
-- [Install MyORM to your project](https://github.com/WangTingZheng/MyORM/wikiInstall)
-- [Define database and table with class](https://github.com/WangTingZheng/MyORM/wikiDefine)
+- [Install MyORM to your project](https://github.com/WangTingZheng/MyORM/wiki/Install)
+- [Define database and table with class](https://github.com/WangTingZheng/MyORM/wiki/Define)
 - [Execute table operation](https://github.com/WangTingZheng/MyORM/wiki/Operation)
 - [Write extend to make MyORM support more databases](https://github.com/WangTingZheng/MyORM/wiki/Extend)
