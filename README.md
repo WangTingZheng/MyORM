@@ -1,4 +1,7 @@
 # MyORM
+
+[![Github Package](https://img.shields.io/badge/Github-Package-brightgreen)](https://github.com/WangTingZheng/MyORM/packages) [![Github Wiki](https://img.shields.io/badge/Github-Wiki-brightgreen)](https://github.com/WangTingZheng/MyORM/wiki)
+
 A simple ORM(Object Relational Mapping) for Java.
 ## Quck Start
 ### Install
@@ -70,3 +73,10 @@ More detail can be saw in [wiki](https://github.com/WangTingZheng/MyORM/wiki):
 - [Define database and table with class](https://github.com/WangTingZheng/MyORM/wiki/Define)
 - [Execute table operation](https://github.com/WangTingZheng/MyORM/wiki/Operation)
 - [Write extend to make MyORM support more databases](https://github.com/WangTingZheng/MyORM/wiki/Extend)
+
+## Todo
+
+- Support more database
+- Support sql language DIY
+- Improve performance
+- Support more sql data type
