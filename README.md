@@ -13,7 +13,7 @@ Add this text to your `pom.xml`
     <version>1.0.6</version>
 </dependency>
 ```
-The latest version can be check [here](https://github.com/WangTingZheng/MyORM/packages)
+The latest version can be check [here](https://github.com/WangTingZheng/MyORM/packages).
 ### Define a table
 This code will create a table named `MyTable` which has two item: username and password. The username is a 100 length varchar and it is primary key, the password is same but it is not primary key.
 ```java
@@ -43,7 +43,7 @@ public class MyTable  {
 }
 ```
 ### Define a database
-This code will define a database which includes one table named MyTable. MyOrm can use SQLITE Driver to connect database in 123.456.789.123:3306 use a account called "myuser". When connect established, MyOrm will use database called test, the server timezone is +8:00
+This code will define a database which includes one table named MyTable. MyOrm can use SQLITE Driver to connect database in 123.456.789.123:3306 use a account called "myuser". When connect established, MyOrm will use database called test, the server timezone is +8:00.
 ```java
 @OrmDatabase(type = DatabaseTypeEnum.SQLITE,host = "123.456.789.123:3306",username = "myuser",password = "mypassword",openDatabase = "test",serverTimezone = "+8:00")
 public class MyDatabase {
@@ -76,7 +76,7 @@ More detail can be saw in [wiki](https://github.com/WangTingZheng/MyORM/wiki):
 
 ## Todo
 
-- Support more database
+- Support more databases
 - Support sql language DIY
 - Improve performance
 - Support more sql data type
