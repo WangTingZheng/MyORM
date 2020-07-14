@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class DatabaseEntity {
     List<TableEntity> tableEntities = new ArrayList<>();
-    List<Class> tableClasses;
+    List<Class> tableClasses = new ArrayList<>();
     Class database;
 
     public DatabaseEntity(Class database) {
@@ -42,6 +42,7 @@ public class DatabaseEntity {
     public void addTableEntity(TableEntity tableEntity){
         tableEntities.add(tableEntity);
     }
+    public void addTableClass(Class table){tableClasses.add(table);}
     public int getSize(){
         return tableEntities.size();
     }
