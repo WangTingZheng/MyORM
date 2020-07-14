@@ -50,6 +50,7 @@ public class DatabaseReflection {
             if (field.isAnnotationPresent(OrmTable.class)){
                 try {
                     databaseEntity.addTableEntity(new TableReflection(field.getType()).toTableEntity());
+                    databaseEntity.addTableClass(field.getType());
                 } catch (TableItemNotFoundException e) {
                     e.printStackTrace();
                 }

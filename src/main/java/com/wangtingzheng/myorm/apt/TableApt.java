@@ -1,10 +1,10 @@
 package com.wangtingzheng.myorm.apt;
 
 import com.wangtingzheng.myorm.annotation.OrmItem;
-import com.wangtingzheng.myorm.entity.TableItemEntity;
+import com.wangtingzheng.myorm.entity.TableEntity;
 import com.wangtingzheng.myorm.exception.DatabaseExcuteNoResult;
 import com.wangtingzheng.myorm.exception.TableItemNotFoundException;
-import com.wangtingzheng.myorm.reflection.ReflectUtils;
+import com.wangtingzheng.myorm.reflection.ObjectReflection;
 import com.wangtingzheng.myorm.reflection.TableReflection;
 import com.wangtingzheng.myorm.util.SQL;
 import java.lang.reflect.Field;
@@ -19,11 +19,12 @@ import java.util.*;
  * @features
  */
 public class TableApt {
-    public Class table; //表类
-    public String tableName; //表名称
-    private List<TableItemEntity> tableItemEntities = new ArrayList<>(); //表项实体，保存着表中各项的信息
+    private Class table; //表类
+    private TableEntity tableEntity;
+    private String databaseName; //表所在数据库的名称
+
     private Connection connection; //数据库连接对象
-    String databaseName; //表所在数据库的名称
+
 
 
     /**
@@ -36,9 +37,8 @@ public class TableApt {
         this.table = table;
         this.connection = connection;
         this.databaseName = databaseName;
-        this.tableName = table.getSimpleName();
         try {
-            this.tableItemEntities = getTableItem();
+            this.tableEntity = getTableEntity();
         } catch (TableItemNotFoundException e) {
             e.printStackTrace();
         }
@@ -47,8 +47,8 @@ public class TableApt {
     /**
      * 通过反射获取表类中的表项的内容，包装成表项实体
      */
-    private List<TableItemEntity> getTableItem() throws TableItemNotFoundException {
-        return new TableReflection(table).toTableEntity().getTableItems();
+    private TableEntity getTableEntity() throws TableItemNotFoundException {
+        return new TableReflection(table).toTableEntity();
     }
 
 
@@ -66,7 +66,7 @@ public class TableApt {
      */
     public boolean create(){
         useDatabase();
-        return SQL.createTable(connection, tableName, tableItemEntities);
+        return SQL.createTable(connection, table.getSimpleName(), tableEntity.getTableItems());
     }
 
     /**
@@ -76,7 +76,7 @@ public class TableApt {
      */
     private boolean add(HashMap<String,String> value){
         useDatabase();
-        return SQL.insert(connection,tableName,value);
+        return SQL.insert(connection,table.getSimpleName(),value);
     }
 
 
@@ -91,7 +91,7 @@ public class TableApt {
         for(Field field: clazz.getDeclaredFields()){
             if (field.isAnnotationPresent(OrmItem.class)){
                 try {
-                    Object fieldValueObject = ReflectUtils.getValue(object,field.getName());
+                    Object fieldValueObject = ObjectReflection.getValue(object,field.getName());
                     String fieldValue = "";
                     if (fieldValueObject != null)
                         fieldValue = fieldValueObject.toString();
@@ -121,7 +121,7 @@ public class TableApt {
 
     private boolean delete(HashMap<String, String> value){
         useDatabase();
-        return SQL.delete(connection, tableName, value);
+        return SQL.delete(connection, table.getSimpleName(), value);
     }
 
     public boolean delete(Object object){
@@ -130,7 +130,7 @@ public class TableApt {
     }
 
     private boolean update(HashMap<String,String> oldValue, HashMap<String,String> newValue){
-        return SQL.update(connection,tableName, oldValue,newValue);
+        return SQL.update(connection,table.getSimpleName(), oldValue,newValue);
     }
     public boolean update(Object oldObject,Object newObject) {
         useDatabase();
@@ -140,11 +140,11 @@ public class TableApt {
     }
 
     public boolean drop(){
-        return SQL.dropTable(connection, tableName);
+        return SQL.dropTable(connection, table.getSimpleName());
     }
 
     public ResultSet select(HashMap<String,String> value)  {
-        return SQL.select(connection,tableName,value);
+        return SQL.select(connection,table.getSimpleName(),value);
     }
 
     public ResultSet select(Object object) {

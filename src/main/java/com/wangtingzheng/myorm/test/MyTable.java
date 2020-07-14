@@ -17,6 +17,7 @@ public class MyTable  {
     @OrmItem(type = ItemTypeEnum.VARCHAR, length = 100)
     private String password;
 
+
     public String getUsername() {
         return username;
     }

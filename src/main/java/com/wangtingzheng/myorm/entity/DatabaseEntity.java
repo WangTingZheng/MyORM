@@ -13,27 +13,17 @@ import java.util.List;
  */
 public class DatabaseEntity {
     List<TableEntity> tableEntities = new ArrayList<>();
-    List<Class> tableClasses;
+    List<Class> tableClasses = new ArrayList<>();
     Class database;
 
     public DatabaseEntity(Class database) {
         this.database = database;
-        this.tableClasses = getTablesClass(database);
     }
 
     public List<Class> getTableClasses() {
         return tableClasses;
     }
 
-    public List<Class> getTablesClass(Class clazz){
-        List<Class> tableClazz = new ArrayList<>();
-        try {
-              tableClazz = new DatabaseReflection(clazz).getTableClass();
-        } catch (TableClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return tableClazz;
-    }
     public DatabaseEntity(List<TableEntity> tableEntities) {
         this.tableEntities = tableEntities;
     }
@@ -52,6 +42,7 @@ public class DatabaseEntity {
     public void addTableEntity(TableEntity tableEntity){
         tableEntities.add(tableEntity);
     }
+    public void addTableClass(Class table){tableClasses.add(table);}
     public int getSize(){
         return tableEntities.size();
     }
