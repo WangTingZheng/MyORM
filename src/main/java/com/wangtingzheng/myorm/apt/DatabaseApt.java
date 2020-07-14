@@ -16,7 +16,7 @@ import java.sql.Connection;
 /**
  * @author WangTingZheng
  * @date 2020/7/8 12:21
- * @features
+ * @features this a annotation process tool for database
  */
 public class DatabaseApt {
     private DatabaseConnectionEntity databaseConnectionEntity; //数据库连接实体，保存着数据库连接相关的信息，比如说密码
