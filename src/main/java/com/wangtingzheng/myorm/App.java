@@ -4,14 +4,6 @@ import com.wangtingzheng.myorm.apt.DatabaseApt;
 import com.wangtingzheng.myorm.apt.TableApt;
 import com.wangtingzheng.myorm.test.MyDatabase;
 import com.wangtingzheng.myorm.test.MyTable;
-import com.wangtingzheng.myorm.reflection.ReflectUtils;
-
-import java.security.Key;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * @author WangTingZheng
@@ -21,9 +13,8 @@ import java.util.Set;
 public class App{
     public static void main(String[] args) throws Exception {
         DatabaseApt databaseApt = new DatabaseApt(MyDatabase.class);
-        //databaseApt.create();
 
-        TableApt tableApt = databaseApt.newTableAptInstance("MyTable");
+        TableApt tableApt = databaseApt.newTableAptInstance(MyTable.class);
         MyTable table = new MyTable();
         table.setUsername("wtz111");
         table.setPassword("12345");

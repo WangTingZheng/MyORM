@@ -19,10 +19,10 @@ import java.sql.Connection;
  * @features
  */
 public class DatabaseApt {
-    public DatabaseConnectionEntity databaseConnectionEntity; //数据库连接实体，保存着数据库连接相关的信息，比如说密码
-    public Class<com.wangtingzheng.myorm.test.MyDatabase> database; //orm数据库的类
-    public Connection connection; //数据库连接对象
-    public DatabaseEntity databaseEntity; //数据库实体，保存着数据库中表的信息，通过反射获得
+    private DatabaseConnectionEntity databaseConnectionEntity; //数据库连接实体，保存着数据库连接相关的信息，比如说密码
+    private DatabaseEntity databaseEntity; //数据库实体，保存着数据库中表的信息，通过反射获得
+    private Class database; //orm数据库的类
+    private Connection connection; //数据库连接对象
 
     public DatabaseApt(Class database) {
         this.database = database;
@@ -94,13 +94,13 @@ public class DatabaseApt {
      * 准备好数据库连接对象
      * 准备好数据库名称
      * 通过表类、数据库连接对象、数据库名称创建一个tableApt对象
-     * @param name 表的名称
+     * @param tableClass 表的类
      * @return 表所对应的 tableApt对象
      * @throws TableClassNotFoundException 当数据库类中找不到这个表时，会报错
      */
-    public TableApt newTableAptInstance(String name) throws TableClassNotFoundException {
+    public TableApt newTableAptInstance(Class tableClass) throws TableClassNotFoundException {
         for(Class myClass: databaseEntity.getTableClasses()){
-            if (myClass.getSimpleName().equals(name)){
+            if (myClass == tableClass){
                 try {
                     return new TableApt(myClass, getConnection(),database.getSimpleName());
                 } catch (DatabaseTypeNotFound e) {
@@ -109,14 +109,6 @@ public class DatabaseApt {
             }
         }
         throw new TableClassNotFoundException("Table class not found in database when get new TableApt", database);
-    }
-
-    public TableApt newTableAptInstance() throws TableClassNotFoundException {
-        return newTableAptInstance();
-    }
-
-    public TableApt newTableAptInstance(Class tableClass) throws TableClassNotFoundException {
-       return newTableAptInstance(tableClass.getSimpleName());
     }
 
     /**

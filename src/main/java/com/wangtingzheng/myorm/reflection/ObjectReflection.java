@@ -19,7 +19,7 @@ import org.apache.commons.lang3.StringUtils;
  * @update
  * @updateDate
  */
-public class ReflectUtils {
+public class ObjectReflection {
 
     /**
      * 通过字段名从对象或对象的父类中得到字段的值

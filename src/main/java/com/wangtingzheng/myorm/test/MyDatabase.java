@@ -2,7 +2,6 @@ package com.wangtingzheng.myorm.test;
 
 import com.wangtingzheng.myorm.annotation.OrmDatabase;
 import com.wangtingzheng.myorm.annotation.OrmTable;
-import com.wangtingzheng.myorm.database.MysqlTest;
 import com.wangtingzheng.myorm.enums.DatabaseTypeEnum;
 
 /**
@@ -14,5 +13,4 @@ import com.wangtingzheng.myorm.enums.DatabaseTypeEnum;
 public class MyDatabase {
     @OrmTable()
     public MyTable myTable;
-
 }

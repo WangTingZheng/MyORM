@@ -18,22 +18,12 @@ public class DatabaseEntity {
 
     public DatabaseEntity(Class database) {
         this.database = database;
-        this.tableClasses = getTablesClass(database);
     }
 
     public List<Class> getTableClasses() {
         return tableClasses;
     }
 
-    public List<Class> getTablesClass(Class clazz){
-        List<Class> tableClazz = new ArrayList<>();
-        try {
-              tableClazz = new DatabaseReflection(clazz).getTableClass();
-        } catch (TableClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return tableClazz;
-    }
     public DatabaseEntity(List<TableEntity> tableEntities) {
         this.tableEntities = tableEntities;
     }
