@@ -100,7 +100,7 @@ public class DatabaseApt {
      */
     public TableApt newTableAptInstance(Class tableClass) throws TableClassNotFoundException {
         for(Class myClass: databaseEntity.getTableClasses()){
-            if (myClass == tableClass){
+            if (myClass ==  tableClass){
                 try {
                     return new TableApt(myClass, getConnection(),database.getSimpleName());
                 } catch (DatabaseTypeNotFound e) {

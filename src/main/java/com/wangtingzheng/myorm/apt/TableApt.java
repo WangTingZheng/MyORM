@@ -93,9 +93,10 @@ public class TableApt {
                 try {
                     Object fieldValueObject = ObjectReflection.getValue(object,field.getName());
                     String fieldValue = "";
-                    if (fieldValueObject != null)
+                    if (fieldValueObject != null){
                         fieldValue = fieldValueObject.toString();
                         value.put(field.getName(), fieldValue);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
