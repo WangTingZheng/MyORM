@@ -13,11 +13,10 @@ import com.wangtingzheng.myorm.test.MyTable;
 public class App{
     public static void main(String[] args) throws Exception {
         DatabaseApt databaseApt = new DatabaseApt(MyDatabase.class);
-
+        databaseApt.create();
         TableApt tableApt = databaseApt.newTableAptInstance(MyTable.class);
-        MyTable table = new MyTable();
-        table.setUsername("wtz1113");
-        table.setPassword("12345");
+        tableApt.create();
+        MyTable table = new MyTable("test","12345");
         System.out.println(tableApt.add(table));
     }
 

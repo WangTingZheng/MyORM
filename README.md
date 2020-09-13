@@ -1,6 +1,6 @@
 # MyORM
 
-[![Github Package](https://img.shields.io/badge/Github-Package-brightgreen)](https://github.com/WangTingZheng/MyORM/packages) [![Github Wiki](https://img.shields.io/badge/Github-Wiki-brightgreen)](https://github.com/WangTingZheng/MyORM/wiki)
+[![Github Package](https://img.shields.io/badge/Github-Package-brightgreen)](https://github.com/WangTingZheng/MyORM/packages) [![Github Wiki](https://img.shields.io/badge/Github-Wiki-brightgreen)](https://github.com/WangTingZheng/MyORM/wiki)[![BiliBili](https://img.shields.io/badge/BiliBili-Videos-brightgreen)](https://www.bilibili.com/video/BV1Ff4y1R7cN)
 
 A simple ORM(Object Relational Mapping) for Java.
 ## Quck Start
