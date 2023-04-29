@@ -16,7 +16,6 @@ public class Mysql extends DatabaseLayer {
     private String DATABASE_URL = "jdbc:mysql://";
     public Mysql(DatabaseConnectionEntity databaseConnectionEntity) {
         super(databaseConnectionEntity);
-
     }
     @Override
     public Connection getConnection() throws ConnectionGetFailed {

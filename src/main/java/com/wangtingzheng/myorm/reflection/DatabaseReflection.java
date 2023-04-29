@@ -4,12 +4,10 @@ import com.wangtingzheng.myorm.annotation.OrmDatabase;
 import com.wangtingzheng.myorm.annotation.OrmTable;
 import com.wangtingzheng.myorm.entity.DatabaseConnectionEntity;
 import com.wangtingzheng.myorm.entity.DatabaseEntity;
-import com.wangtingzheng.myorm.entity.TableEntity;
 import com.wangtingzheng.myorm.exception.DatabaseNotFoundException;
 import com.wangtingzheng.myorm.exception.TableClassNotFoundException;
 import com.wangtingzheng.myorm.exception.TableItemNotFoundException;
 import com.wangtingzheng.myorm.exception.TableNotFoundException;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
